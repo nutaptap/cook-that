@@ -4,20 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cook That</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM Plex Mono"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <script defer src="app.js"></script>
   </head>
   <body>
     <nav>
-      <img src="/images/logo.svg" alt="Cook that logo" />
+      <img src="/images/logo.svg" alt="Cook that logo" class="logo" />
       <a href="https://github.com/nutaptap"
-        ><img src="/images/github.svg" alt="My github"
+        ><img class="icon" src="/images/github.svg" alt="My github"
       /></a>
     </nav>
     <main>
       <h1>LINGUINI FETUCCINI</h1>
       <div class="recipe">
-        <img src="/images/recipe-picture.png" alt="Recipe picture" />
-        <span id="ingredients">
+        <div id="recipe-image"></div>
+        <div class="ingredients">
           <h2>INGREDIENTS</h2>
           <ul>
             <li>4 tsp oil</li>
@@ -33,8 +47,8 @@
             <li>4 eggs</li>
             <li>75g mature Cheddar, grated</li>
           </ul>
-        </span>
-        <span id="instructions">
+        </div>
+        <div class="instructions">
           <h2>INSTRUCTIONS</h2>
           <p>
             Heat 3 tsp oil over a medium-high heat in a large, deep frying pan.
@@ -51,22 +65,20 @@
             the cheese over and around and cook for 5 mins until the bottoms of
             the eggs are starting to cook. Pop under a hot grill to finish off
             and melt the cheese.<br />
-            See more Breakfast recipes<br />
-            For top tips on protecting you and your family when preparing raw
-            meat and poultry, visit Food Safety in the Home.<br />
+            See more Breakfast recipes.
           </p>
-        </span>
+        </div>
       </div>
     </main>
-    <section>
-      <span id="buttons-container">
+    <section class="buttons">
+      <div class="buttons-container">
         <button id="all">All</button>
         <button id="gluten">Gluten Free</button>
         <button id="vegetarian">Vegetarian</button>
         <button id="vegan">Vegan</button>
         <button id="desserts">Desserts</button>
-      </span>
-      <button>GIVE ME A RECIPE</button>
+      </div>
+      <button id="recipe-button" class="recipe-button">GIVE ME A RECIPE</button>
     </section>
   </body>
 </html>

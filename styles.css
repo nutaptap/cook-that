@@ -1,0 +1,193 @@
+body {
+  background-color: #f4f1ed;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* NAVIGATION */
+nav {
+  margin: 0;
+  width: 100;
+  display: flex;
+  align-items: center;
+  padding: 10px 60px;
+}
+
+.logo {
+  margin-right: auto;
+  height: 33px;
+}
+
+.icon {
+  width: 32px;
+}
+
+/* RECIPE CARD */
+main {
+  background-color: #f8f6f3;
+  border-radius: 15px;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  padding: 15px 30px;
+  padding-top: 15px;
+  min-width: 890px;
+}
+
+h1 {
+  margin: 0;
+  padding-left: 30vw;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  color: #112d3c;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 16px;
+  color: #112d3c;
+}
+
+.recipe {
+  display: flex;
+  padding-top: 15px;
+}
+
+#recipe-image {
+  width: 319px;
+  height: 300px;
+  min-width: 319px;
+  min-height: 300px;
+  margin-right: 4.5vw;
+  margin-left: 1vw;
+  background-image: url(/images/recipe-picture.png),
+    url(/images/dash-ellipse.svg), url(/images/small-ellipse.svg),
+    url(/images/big-ellipse.svg);
+  background-repeat: no-repeat;
+  background-position: center, center, top 50px right, top left;
+}
+
+.ingredients {
+  width: 300px;
+  min-width: 200px;
+  margin-right: auto;
+}
+
+.instructions {
+  width: 400px;
+  min-width: 300px;
+}
+
+p,
+ul {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 120%;
+  padding-left: 12px;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  padding: 3px 9px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: #e77745;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+button:hover {
+  background-color: #e77745;
+}
+
+button:active {
+  background-color: #ec8659;
+}
+
+.recipe-button {
+  margin-top: 22px;
+  padding: 5px 12px;
+  border-style: none;
+  background-color: #112d3c;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.recipe-button:hover {
+  background-color: #1a445a;
+  margin-top: 21px;
+  padding: 6px 13px;
+}
+
+/* BREAKPOINTS */
+@media (max-width: 700px) {
+  body {
+    background-color: #f8f6f3;
+  }
+  main {
+    margin: auto;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .recipe {
+    flex-direction: column;
+    max-width: 420px;
+    align-items: center;
+  }
+  h1 {
+    padding: 0;
+    font-size: 28px;
+  }
+  p {
+    padding-left: 0px;
+  }
+}
+
+@media (max-width: 450px) {
+  main {
+    max-width: 90vw;
+  }
+  .recipe {
+    max-width: 90vw;
+  }
+  #recipe-image {
+    min-width: 90vw;
+    width: 90vw;
+    background-size: 62vw, 70vw, 13vw, 62vw;
+    background-position: center, center, top 13vw right 10vw, top left 2vh;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  .ingredients {
+    min-width: 90vw;
+    width: 90vw;
+  }
+  .instructions {
+    min-width: 90vw;
+    width: 90vw;
+  }
+  h2 {
+    text-align: center;
+    font-size: 14px;
+  }
+  p,
+  ul {
+    font-size: 12px;
+  }
+}
