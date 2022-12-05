@@ -22,18 +22,18 @@
   </head>
   <body>
     <nav>
-      <img src="/images/logo.svg" alt="Cook that logo" class="logo" />
+      <img src="images/logo.svg" alt="Cook that logo" class="logo" />
       <a href="https://github.com/nutaptap"
-        ><img class="icon" src="/images/github.svg" alt="My github"
+        ><img class="icon" src="images/github.svg" alt="My github"
       /></a>
     </nav>
     <main>
-      <h1>LINGUINI FETUCCINI</h1>
+      <h1 id="title-display">LINGUINI FETUCCINI</h1>
       <div class="recipe">
         <div id="recipe-image"></div>
         <div class="ingredients">
           <h2>INGREDIENTS</h2>
-          <ul>
+          <ul id="ingredients-display">
             <li>4 tsp oil</li>
             <li>
               250g leftover bread (ciabatta or baguette works well), cut into
@@ -50,7 +50,7 @@
         </div>
         <div class="instructions">
           <h2>INSTRUCTIONS</h2>
-          <p>
+          <p id="instructions-display">
             Heat 3 tsp oil over a medium-high heat in a large, deep frying pan.
             Add the bread cubes and cook until starting to crisp or crisped all
             over (depending on how you like it).<br />
@@ -76,6 +76,7 @@
         <button class="diet">Gluten Free</button>
         <button class="diet">Vegetarian</button>
         <button class="diet">Vegan</button>
+        <button id="desserts">Desserts</button>
       </div>
       <button id="recipe-button" class="recipe-button">GIVE ME A RECIPE</button>
     </section>

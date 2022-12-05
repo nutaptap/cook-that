@@ -1,5 +1,6 @@
 /*-------------CHANGE FILTERS-------------*/
 const buttons = document.getElementsByClassName("diet");
+let recipeData = {};
 let dietArray = [];
 let dietString = "";
 
@@ -52,11 +53,28 @@ function changeAll() {
   allButton.className = "active";
   dietArray = [];
   dietString = "";
+  type = "";
   for (i = 0; i < buttons.length; i++) {
     buttons[i].className = "diet";
   }
+  dessertsButton.className = "";
   console.log(dietArray, dietString);
 }
+
+/*------------DESSERTS BUTTON-------------*/
+const dessertsButton = document.getElementById("desserts");
+let type = "";
+
+dessertsButton.addEventListener("click", function () {
+  if (type === "") {
+    type = "dessert";
+    dessertsButton.className = "active";
+  } else {
+    type = "";
+    dessertsButton.className = "";
+  }
+  console.log(type);
+});
 
 /*------------GET A NEW RECIPE------------*/
 
@@ -74,14 +92,39 @@ function getOffset() {
 
 async function getRecipe() {
   const res = await fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=32919dc2eb944e8482f7ed12fedfad71&number=1&maxReadyTime=30&addRecipeInformation=true&sort=popular&diet=${dietString}&offset=${offset}`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=32919dc2eb944e8482f7ed12fedfad71&number=1&maxReadyTime=30&addRecipeInformation=true&sort=popular&diet=${dietString}&offset=${offset}&type=${type}`
   );
   res.json().then(function (res) {
-    console.log(res);
     recipe = res.results;
-    console.log(recipe);
-    console.log(recipe[0].title);
+    updateTitle(recipe[0].title);
+    updateImage(recipe[0].image);
+    updateIngredients(recipe[0].analyzedInstructions[0].steps);
+    updateInstructions(recipe[0].analyzedInstructions[0].steps);
   });
 }
 
 /*-----------DISPLAY THE RECIPE-----------*/
+const r = document.querySelector(":root");
+const title = document.getElementById("title-display");
+const ingredients = document.getElementById("ingredients-display");
+const instructions = document.getElementById("instructions-display");
+
+function updateTitle(recipeTitle) {
+  title.innerText = recipeTitle;
+}
+
+function updateIngredients(recipeData) {
+  let ingredients = "";
+
+  console.log(recipeData);
+}
+
+function updateInstructions(recipeData) {
+  let recipeInstructions = "";
+  for (i = 0; i < recipeData.length; i++) {
+    recipeInstructions += recipeData[i].step;
+  }
+  instructions.innerText = recipeInstructions;
+}
+
+function updateImage(recipeImage) {}

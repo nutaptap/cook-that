@@ -30,16 +30,16 @@ main {
   border-radius: 15px;
   margin-left: 3vw;
   margin-right: 3vw;
-  padding: 15px 30px;
-  padding-top: 15px;
-  min-width: 890px;
+  padding: 18px 33px;
+  margin-top: 18px;
+  min-width: 800px;
 }
 
 h1 {
   margin: 0;
-  padding-left: 30vw;
+  padding-left: 28.5vw;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: bold;
   letter-spacing: 0.2em;
   color: #112d3c;
@@ -56,6 +56,8 @@ h2 {
   padding-top: 15px;
 }
 
+/* RECIPE IMAGE */
+
 #recipe-image {
   width: 319px;
   height: 300px;
@@ -71,13 +73,13 @@ h2 {
 }
 
 .ingredients {
-  width: 300px;
+  width: 350px;
   min-width: 200px;
   margin-right: auto;
 }
 
 .instructions {
-  width: 400px;
+  width: 450px;
   min-width: 300px;
 }
 
@@ -87,6 +89,9 @@ ul {
   font-weight: 300;
   font-size: 14px;
   line-height: 120%;
+}
+
+ul {
   padding-left: 12px;
 }
 
