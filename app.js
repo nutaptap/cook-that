@@ -73,14 +73,24 @@ function getOffset() {
 
 async function getRecipe() {
   const res = await fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=ece8e30cf5ca42b1b4c2b09e2807443f&number=1&maxReadyTime=30&addRecipeInformation=true&sort=popular&diet=${dietString}&offset=${offset}`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=84af70f7d25a4d388d14fb07529d06bb&number=1&maxReadyTime=30&addRecipeInformation=true&sort=popular&diet=${dietString}&offset=${offset}`
   );
   res.json().then(function (res) {
     recipe = res.results;
     updateTitle(recipe[0].title);
     updateImage(recipe[0].image);
-    updateIngredients(recipe[0].analyzedInstructions[0].steps);
+    /* updateIngredients(recipe[0].analyzedInstructions[0].steps); */
     updateInstructions(recipe[0].analyzedInstructions[0].steps);
+    getIngredients(recipe[0].id);
+  });
+}
+
+async function getIngredients(id) {
+  const res = await fetch(
+    `https://api.spoonacular.com/recipes/${id}/information?apiKey=84af70f7d25a4d388d14fb07529d06bb&includeNutrition=false`
+  );
+  res.json().then(function (res) {
+    updateIngredients(res.extendedIngredients);
   });
 }
 
@@ -113,30 +123,21 @@ function updateInstructions(recipeData) {
   instructions.appendChild(newList);
 }
 
-/* function updateIngredients(recipeData) {
+function updateIngredients(recipeData) {
   ingredients.innerHTML = "";
 
-  let objectsList = [];
-  for (i = 0; i < recipeData.length; i++) {
-    objectsList.push(recipeData[i].ingredients);
-  }
-
   let ingredientsList = [];
-  for (i = 0; i < objectsList.length; i++) {
-    if (objectsList[i].length > 0) {
-      for (j = 0; j < objectsList[i].length; j++)
-        ingredientsList.push(objectsList[i][j].name);
-    }
+  for (i = 0; i < recipeData.length; i++) {
+    ingredientsList.push(recipeData[i].original);
   }
 
   const newList = document.createElement("ul");
 
   for (i = 0; i < ingredientsList.length; i++) {
     let li = document.createElement("li");
-    li.innerText =
-      ingredientsList[i].charAt(0).toUpperCase() + ingredientsList[i].slice(1);
+    li.innerText = ingredientsList[i];
     newList.appendChild(li);
   }
 
   ingredients.appendChild(newList);
-} */
+}
