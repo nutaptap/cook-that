@@ -1,3 +1,6 @@
+const recipeCard = document.getElementById("recipe-card");
+recipeCard.classList.add("invisible");
+
 /*-------------CHANGE FILTERS-------------*/
 const buttons = document.getElementsByClassName("diet");
 let recipeData = {};
@@ -73,7 +76,7 @@ function getOffset() {
 
 async function getRecipe() {
   const res = await fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=84af70f7d25a4d388d14fb07529d06bb&number=1&maxReadyTime=30&addRecipeInformation=true&sort=popular&diet=${dietString}&offset=${offset}`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=918aa9352c7f4a8c890ce6775ff91479&number=1&maxReadyTime=30&addRecipeInformation=true&sort=popular&diet=${dietString}&offset=${offset}`
   );
   res.json().then(function (res) {
     recipe = res.results;
@@ -83,11 +86,12 @@ async function getRecipe() {
     updateInstructions(recipe[0].analyzedInstructions[0].steps);
     getIngredients(recipe[0].id);
   });
+  recipeCard.classList.remove("invisible");
 }
 
 async function getIngredients(id) {
   const res = await fetch(
-    `https://api.spoonacular.com/recipes/${id}/information?apiKey=84af70f7d25a4d388d14fb07529d06bb&includeNutrition=false`
+    `https://api.spoonacular.com/recipes/${id}/information?apiKey=918aa9352c7f4a8c890ce6775ff91479&includeNutrition=false`
   );
   res.json().then(function (res) {
     updateIngredients(res.extendedIngredients);

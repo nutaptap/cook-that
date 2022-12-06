@@ -4,12 +4,17 @@ body {
   font-size: 12px;
   font-weight: 600;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* NAVIGATION */
 nav {
   margin: 0;
-  width: 100;
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   align-items: center;
   padding: 10px 60px;
@@ -25,19 +30,23 @@ nav {
 }
 
 /* RECIPE CARD */
+.invisible {
+  display: none;
+}
 main {
   background-color: #f8f6f3;
   border-radius: 15px;
   margin-left: 3vw;
   margin-right: 3vw;
-  padding: 18px 33px;
+  padding: 50px;
   margin-top: 18px;
   min-width: 800px;
+  max-width: 1200px;
 }
 
 h1 {
   margin: 0;
-  padding-left: 28.5vw;
+  /* padding-left: 280.5vw; */
   font-family: "IBM Plex Mono", monospace;
   font-size: 30px;
   font-weight: bold;
@@ -53,7 +62,7 @@ h2 {
 
 .recipe {
   display: flex;
-  padding-top: 15px;
+  padding-top: 50px;
 }
 
 /* RECIPE IMAGE */
@@ -89,6 +98,7 @@ h2 {
 .instructions {
   width: 450px;
   min-width: 300px;
+  margin-left: 50px;
 }
 
 p,
@@ -100,7 +110,11 @@ ul {
 }
 
 ul {
-  padding-left: 12px;
+  padding-left: 10px;
+}
+
+ol {
+  padding-left: 15px;
 }
 
 /* BUTTONS */
@@ -112,8 +126,8 @@ ul {
 }
 
 button {
-  padding: 3px 9px;
-  border-radius: 8px;
+  padding: 6px 12px;
+  border-radius: 20px;
   border-style: solid;
   border-width: 1.5px;
   border-color: #e77745;
@@ -131,7 +145,7 @@ button:hover {
 
 .recipe-button {
   margin-top: 22px;
-  padding: 5px 12px;
+  padding: 6px 12px;
   border-style: none;
   background-color: #112d3c;
   font-weight: 700;
@@ -168,6 +182,9 @@ button:hover {
   }
   p {
     padding-left: 0px;
+  }
+  .instructions {
+    margin-left: 10px;
   }
 }
 
