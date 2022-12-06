@@ -22,7 +22,6 @@ function changeDiet(selection) {
   }
 
   dietString = dietArray.toString();
-  console.log(dietArray, dietString);
 }
 
 function makeActive(selected) {
@@ -53,28 +52,10 @@ function changeAll() {
   allButton.className = "active";
   dietArray = [];
   dietString = "";
-  type = "";
   for (i = 0; i < buttons.length; i++) {
     buttons[i].className = "diet";
   }
-  dessertsButton.className = "";
-  console.log(dietArray, dietString);
 }
-
-/*------------DESSERTS BUTTON-------------*/
-const dessertsButton = document.getElementById("desserts");
-let type = "";
-
-dessertsButton.addEventListener("click", function () {
-  if (type === "") {
-    type = "dessert";
-    dessertsButton.className = "active";
-  } else {
-    type = "";
-    dessertsButton.className = "";
-  }
-  console.log(type);
-});
 
 /*------------GET A NEW RECIPE------------*/
 
@@ -92,7 +73,7 @@ function getOffset() {
 
 async function getRecipe() {
   const res = await fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=32919dc2eb944e8482f7ed12fedfad71&number=1&maxReadyTime=30&addRecipeInformation=true&sort=popular&diet=${dietString}&offset=${offset}&type=${type}`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=ece8e30cf5ca42b1b4c2b09e2807443f&number=1&maxReadyTime=30&addRecipeInformation=true&sort=popular&diet=${dietString}&offset=${offset}`
   );
   res.json().then(function (res) {
     recipe = res.results;
@@ -104,27 +85,58 @@ async function getRecipe() {
 }
 
 /*-----------DISPLAY THE RECIPE-----------*/
-const r = document.querySelector(":root");
+/* const r = document.querySelector(":root"); */
 const title = document.getElementById("title-display");
 const ingredients = document.getElementById("ingredients-display");
 const instructions = document.getElementById("instructions-display");
+const image = document.getElementById("recipe-image");
 
 function updateTitle(recipeTitle) {
   title.innerText = recipeTitle;
 }
 
-function updateIngredients(recipeData) {
-  let ingredients = "";
-
-  console.log(recipeData);
+function updateImage(recipeImage) {
+  image.src = recipeImage;
 }
 
 function updateInstructions(recipeData) {
-  let recipeInstructions = "";
+  instructions.innerHTML = "";
+
+  const newList = document.createElement("ol");
+
   for (i = 0; i < recipeData.length; i++) {
-    recipeInstructions += recipeData[i].step;
+    let li = document.createElement("li");
+    li.innerText = recipeData[i].step;
+    newList.appendChild(li);
   }
-  instructions.innerText = recipeInstructions;
+
+  instructions.appendChild(newList);
 }
 
-function updateImage(recipeImage) {}
+/* function updateIngredients(recipeData) {
+  ingredients.innerHTML = "";
+
+  let objectsList = [];
+  for (i = 0; i < recipeData.length; i++) {
+    objectsList.push(recipeData[i].ingredients);
+  }
+
+  let ingredientsList = [];
+  for (i = 0; i < objectsList.length; i++) {
+    if (objectsList[i].length > 0) {
+      for (j = 0; j < objectsList[i].length; j++)
+        ingredientsList.push(objectsList[i][j].name);
+    }
+  }
+
+  const newList = document.createElement("ul");
+
+  for (i = 0; i < ingredientsList.length; i++) {
+    let li = document.createElement("li");
+    li.innerText =
+      ingredientsList[i].charAt(0).toUpperCase() + ingredientsList[i].slice(1);
+    newList.appendChild(li);
+  }
+
+  ingredients.appendChild(newList);
+} */

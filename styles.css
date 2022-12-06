@@ -58,18 +58,26 @@ h2 {
 
 /* RECIPE IMAGE */
 
-#recipe-image {
+#recipe-image-container {
+  display: flex;
   width: 319px;
   height: 300px;
   min-width: 319px;
   min-height: 300px;
   margin-right: 4.5vw;
   margin-left: 1vw;
-  background-image: url(/images/recipe-picture.png),
-    url(/images/dash-ellipse.svg), url(/images/small-ellipse.svg),
-    url(/images/big-ellipse.svg);
+  background-image: url(/images/dash-ellipse.svg),
+    url(/images/small-ellipse.svg), url(/images/big-ellipse.svg);
   background-repeat: no-repeat;
-  background-position: center, center, top 50px right, top left;
+  background-position: center, top 50px right, top left;
+}
+
+#recipe-image {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .ingredients {
