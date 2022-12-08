@@ -73,6 +73,7 @@ h2 {
   border-radius: 50%;
   object-fit: cover;
   margin-right: 120px;
+  margin-top: 20px;
 }
 
 .ingredients {
@@ -94,7 +95,7 @@ ul {
   font-family: "Roboto";
   font-weight: 300;
   font-size: 14px;
-  line-height: 120%;
+  line-height: 25px;
 }
 
 ul {
@@ -151,6 +152,9 @@ button:hover {
 @media (max-width: 700px) {
   body {
     background-color: #f8f6f3;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
   }
   main {
     margin: auto;
@@ -160,6 +164,7 @@ button:hover {
     align-items: center;
     padding: 30px;
   }
+
   .recipe {
     flex-direction: column;
     max-width: 420px;
@@ -173,7 +178,7 @@ button:hover {
     padding-left: 0px;
   }
   .instructions {
-    margin-left: 10px;
+    margin-left: 0px;
   }
 }
 
@@ -182,6 +187,11 @@ button:hover {
     max-width: 90vw;
     padding: 8px;
   }
+
+  #recipe-image {
+    margin-right: 0px;
+  }
+
   .recipe {
     max-width: 90vw;
   }
