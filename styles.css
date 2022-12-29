@@ -1,4 +1,152 @@
+/*
+  CSS Reset
+*/
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+  Colors
+*/
+
+:root {
+  --black: #323141;
+  --light-blue: #e9f1fe;
+  --pink: #f87192;
+  --dark-pink: #ec6082;
+  --blue: #ab96f3;
+  --dark-blue: #947de0;
+  --blue-transparency: #ac96f360;
+}
+
+/*
+  Body
+*/
+
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/*
+  Nav bar
+*/
+
+nav {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  padding: 3rem;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+
+.logo {
+  font-family: "Archivo", sans-serif;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  letter-spacing: -0.05rem;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+/*
+  Recipe selector
+*/
+
+.recipe-selector {
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px var(--blue);
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+}
+
+label {
+  display: none;
+}
+
+select {
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  background-color: transparent;
+  margin-right: 3rem;
+}
+
+select:focus,
+select:active {
+  border: none;
+  outline: none;
+}
+
+.recipe-button {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--blue);
+  padding: 0.7rem 1.8rem;
+  border-style: none;
+  border-radius: 0.5rem;
+}
+
+.recipe-button:hover {
+  background-color: var(--dark-blue);
+  box-shadow: 2px 2px 10px var(--blue-transparency),
+    10px 10px 30px var(--blue-transparency);
+}
+
+/* body {
   background-color: #f4f1ed;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
@@ -10,7 +158,6 @@ body {
   align-items: center;
 }
 
-/* NAVIGATION */
 nav {
   margin: 0;
   width: 100%;
@@ -29,7 +176,6 @@ nav {
   width: 32px;
 }
 
-/* RECIPE CARD */
 .invisible {
   display: none;
 }
@@ -46,7 +192,6 @@ main {
 
 h1 {
   margin: 0;
-  /* padding-left: 280.5vw; */
   font-family: "IBM Plex Mono", monospace;
   font-size: 30px;
   font-weight: bold;
@@ -65,7 +210,6 @@ h2 {
   padding-top: 50px;
 }
 
-/* RECIPE IMAGE */
 
 #recipe-image {
   width: 300px;
@@ -106,7 +250,6 @@ ol {
   padding-left: 15px;
 }
 
-/* BUTTONS */
 .buttons {
   margin-top: 32px;
   display: flex;
@@ -148,7 +291,6 @@ button:hover {
   padding: 6px 13px;
 }
 
-/* BREAKPOINTS */
 @media (max-width: 700px) {
   body {
     background-color: #f8f6f3;
@@ -216,3 +358,4 @@ button:hover {
     font-size: 12px;
   }
 }
+ */

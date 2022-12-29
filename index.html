@@ -8,20 +8,46 @@
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Poppins"
+      href="https://fonts.googleapis.com/css?family=Archivo"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=IBM Plex Mono"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto"
     />
     <script defer src="app.js"></script>
   </head>
   <body>
+    <!-- Navigation bar -->
     <nav>
+      <a href="" class="logo">COOK.THAT</a>
+      <div class="recipe-selector">
+        <label for="filters">Select a type of recipe:</label>
+        <select name="filters" id="filters">
+          <option value="all">All</option>
+          <option value="gluten-free">Gluten Free</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="vegan">Vegan</option>
+          <option value="dessert">Dessert</option>
+        </select>
+        <button id="recipe-button" class="recipe-button">Get recipe</button>
+      </div>
+      <a href="#about">About</a>
+    </nav>
+
+    <!-- Header recipe section -->
+    <header>
+      <img src="" alt="" />
+      <div>
+        <h1></h1>
+        <div>
+          <p></p>
+          <p></p>
+        </div>
+        <p></p>
+        <div></div>
+      </div>
+    </header>
+    <!-- <nav>
       <img src="images/logo.svg" alt="Cook that logo" class="logo" />
       <a href="https://github.com/nutaptap"
         ><img class="icon" src="images/github.svg" alt="My github"
@@ -44,12 +70,15 @@
     </main>
     <section class="buttons">
       <div class="buttons-container">
-        <button id="All">All</button>
-        <button class="diet">Gluten Free</button>
-        <button class="diet">Vegetarian</button>
-        <button class="diet">Vegan</button>
+        <select name="filters" id="filters">
+          <option value="all">All</option>
+          <option value="gluten-free">Gluten Free</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="vegan">Vegan</option>
+          <option value="dessert">Dessert</option>
+        </select>
       </div>
       <button id="recipe-button" class="recipe-button">GIVE ME A RECIPE</button>
-    </section>
+    </section> -->
   </body>
 </html>
