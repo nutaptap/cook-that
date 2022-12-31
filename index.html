@@ -27,7 +27,6 @@
           <option value="gluten-free">Gluten Free</option>
           <option value="vegetarian">Vegetarian</option>
           <option value="vegan">Vegan</option>
-          <option value="dessert">Dessert</option>
         </select>
         <button id="recipe-button" class="recipe-button">Get recipe</button>
       </div>
@@ -37,14 +36,15 @@
     <!-- Header recipe section -->
     <header>
       <img
+        id="recipe-image"
         src="https://www.jocooks.com/wp-content/uploads/2019/10/coconut-chicken-curry-1-10-768x960.jpg"
         alt="Recipe picure"
       />
       <div class="recipe-title-container">
-        <h1> Chickpea & coconut curry </h1>
+        <h1 id="title-display"> Chickpea & coconut curry </h1>
         <div class="recipe-details">
-          <p>vegetarian</p>
-          <p>Total <span>30m</span> </p>
+          <p id="recipe-tag">vegetarian</p>
+          <p>Total <span id="time">30m</span> </p>
         </div>
         <div class="nutrition-details">
           <span>
@@ -146,6 +146,18 @@
     <a href="#nav" class="arrow">
       <img src="images/arrow.png" alt="Arrow up icon" />
     </a>
+
+    <!-- Footer -->
+
+    <footer>
+      <p>
+        Coded by <a href="">Nuria</a>
+        <a href="https://github.com/nutaptap">
+          <img src="images/github.png" alt="Github link" />
+        </a>
+        <a href=""><img src="images/linkedin.png" alt="Linkedin link" /></a>
+      </p>
+    </footer>
 
     <!-- <nav>
       <img src="images/logo.svg" alt="Cook that logo" class="logo" />

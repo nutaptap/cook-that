@@ -349,6 +349,38 @@ h2 {
   height: auto;
 }
 
+/*
+  Footer
+*/
+
+footer {
+  padding: 3rem;
+}
+
+footer > p {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+footer > p > a {
+  margin-left: 0.5rem;
+}
+
+footer > p > a:first-of-type {
+  margin-right: 4rem;
+  color: var(--dark-blue);
+}
+
+footer > p > a:first-of-type:hover {
+  text-decoration: none;
+}
+
+footer > p > a > img {
+  width: 45px;
+  height: auto;
+}
+
 /* body {
   background-color: #f4f1ed;
   font-family: "Poppins", sans-serif;
