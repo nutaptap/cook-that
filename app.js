@@ -172,54 +172,6 @@ function animate() {
   }
 }
 
-/* window.addEventListener("scroll", animateIngredients);
-
-function animateIngredients() {
-  const scrollPosition = window.scrollY;
-  const targetIngredients = ingredientsAnimate.offsetTop + 25;
-  if (scrollPosition > targetIngredients) {
-    ingredientsAnimate.classList.remove("hidden");
-    instructionsAnimate.classList.remove("hidden");
-  }
-} */
-
-/* window.addEventListener("scroll", animateAbout);
-
-function animateAbout() {
-  const scrollPosition = window.scrollY;
-  const targetAbout = aboutAnimate.offsetTop + 25;
-  if (scrollPosition > targetAbout) {
-    setTimeout(function () {
-      aboutAnimate.classList.remove("hidden");
-      imageAnimate.classList.remove("hidden");
-    }, 1800);
-  }
-} */
-
-/* window.addEventListener("scroll", animateArrow);
-
-function animateArrow() {
-  const scrollPosition = window.scrollY;
-  const targetArrow = arrowAnimate.offsetTop + 25;
-  if (scrollPosition > targetArrow) {
-    setTimeout(function () {
-      arrowAnimate.classList.remove("hidden");
-    }, 2800);
-  }
-} */
-
-/* window.addEventListener("scroll", animateFooter);
-
-function animateFooter() {
-  const scrollPosition = window.scrollY;
-  const targetFooter = footerAnimate.offsetTop + 25;
-  if (scrollPosition > targetFooter) {
-    setTimeout(function () {
-      footerAnimate.classList.remove("hidden");
-    }, 2800);
-  }
-} */
-
 function hideAll() {
   header.classList.add("hidden");
   ingredientsAnimate.classList.add("hidden");
