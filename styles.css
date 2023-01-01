@@ -542,6 +542,10 @@ footer > p > a > img {
   }
 }
 
+/*
+  Media 640px
+*/
+
 @media (max-width: 640px) {
   /*
   Nav
@@ -549,6 +553,7 @@ footer > p > a > img {
 
   nav {
     justify-content: center;
+    padding: 3rem 1vw;
   }
 
   nav > a {
@@ -559,11 +564,27 @@ footer > p > a > img {
     margin-right: 0;
   }
 
+  select {
+    margin-right: 1rem;
+  }
+
+  .recipe-button {
+    padding: 0.7rem 1rem;
+  }
+
   /*
   Header
   */
 
   .nutrition-details {
     display: none;
+  }
+
+  /*
+  Ingredients and instructions
+  */
+
+  .ingredients {
+    min-width: 0;
   }
 }
