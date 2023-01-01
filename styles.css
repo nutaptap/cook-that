@@ -587,4 +587,16 @@ footer > p > a > img {
   .ingredients {
     min-width: 0;
   }
+
+  /*
+  Footer
+  */
+
+  footer > p {
+    font-size: 0.8rem;
+  }
+
+  footer > p > a:first-of-type {
+    margin-right: 0.8rem;
+  }
 }
