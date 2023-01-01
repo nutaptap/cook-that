@@ -34,7 +34,7 @@
     </nav>
 
     <!-- Header recipe section -->
-    <header>
+    <header class="hidden" id="header">
       <img
         id="recipe-image"
         src="https://www.jocooks.com/wp-content/uploads/2019/10/coconut-chicken-curry-1-10-768x960.jpg"
@@ -74,7 +74,7 @@
     <!-- Ingredients and Instructions recipe section -->
 
     <section class="ingredients-instructions-container">
-      <div class="ingredients">
+      <div id="ingredients" class="ingredients hidden">
         <h2>INGREDIENTS</h2>
         <ul id="ingredients-display">
           <li> 2 tablespoons coconut oil </li>
@@ -91,7 +91,7 @@
           <li> 1 small lime, juice of </li>
         </ul>
       </div>
-      <div class="instructions">
+      <div id="instructions" class="instructions hidden">
         <h2>INSTRUCTIONS</h2>
         <ol id="instructions-display">
           <li> In a deep pot over medium-high heat, add the coconut oil. </li>
@@ -123,7 +123,7 @@
 
     <!-- About section -->
     <section id="about">
-      <div class="about-section">
+      <div id="about-animate" class="about-section hidden">
         <h2>About</h2>
         <p>
           Need some inspiration in the kitchen? CookThat is here to help!
@@ -136,6 +136,8 @@
         </p>
       </div>
       <img
+        id="image-animate"
+        class="hidden"
         src="images/illustration.png"
         alt="Illustration of a person cooking"
       />
@@ -143,13 +145,13 @@
 
     <!-- Arrow up -->
 
-    <a href="#nav" class="arrow">
+    <a href="#nav" class="hidden arrow" id="arrow">
       <img src="images/arrow.png" alt="Arrow up icon" />
     </a>
 
     <!-- Footer -->
 
-    <footer>
+    <footer class="hidden" id="footer">
       <p>
         Coded by <a href="">Nuria</a>
         <a href="https://github.com/nutaptap">

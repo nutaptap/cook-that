@@ -66,7 +66,8 @@ body {
 nav {
   display: flex;
   width: 100%;
-  padding: 2rem 10vw;
+  padding: 3rem 5vw;
+  max-width: 1350px;
   align-items: center;
   justify-content: space-between;
 }
@@ -147,13 +148,26 @@ header {
   margin-top: 1rem;
   display: flex;
   width: 100%;
-  padding: 3rem 10vw;
+  padding: 3rem 5vw;
+  max-width: 1350px;
 }
 
 img {
   width: 320px;
   height: 400px;
   object-fit: cover;
+  animation: fadeImage 1.6s;
+}
+
+@keyframes fadeImage {
+  0% {
+    opacity: 0;
+    scale: 102%;
+  }
+  100% {
+    opacity: 1;
+    scale: auto;
+  }
 }
 
 .recipe-title-container {
@@ -168,6 +182,18 @@ h1 {
   font-size: 3.3rem;
   font-weight: bold;
   letter-spacing: 0.3rem;
+  animation: fadeTitle 1.5s;
+}
+
+@keyframes fadeTitle {
+  0% {
+    opacity: 0;
+    margin-left: 10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
 }
 
 /*
@@ -202,6 +228,19 @@ h1 {
   margin-top: 1.5rem;
   font-size: 0.8rem;
   text-align: center;
+  animation: fadeNutrition 2s;
+}
+
+@keyframes fadeNutrition {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .nutrition-details > span {
@@ -237,7 +276,28 @@ h1 {
 
 .ingredients-instructions-container {
   display: flex;
-  padding: 3rem 10vw;
+  padding: 3rem 5vw;
+  max-width: 1350px;
+}
+
+#instructions,
+#ingredients {
+  animation: fadeInstructions 2s;
+}
+
+@keyframes fadeInstructions {
+  0% {
+    opacity: 0;
+    margin-top: 10px;
+  }
+  30% {
+    opacity: 0;
+    margin-top: 10px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
 }
 
 .ingredients,
@@ -315,6 +375,22 @@ h2 {
 .about-section {
   max-width: 40vw;
   margin-right: 4rem;
+  animation: fadeAbout 2.5s;
+}
+
+@keyframes fadeAbout {
+  0% {
+    opacity: 0;
+    margin-right: 5rem;
+  }
+  30% {
+    opacity: 0;
+    margin-right: 5rem;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 4rem;
+  }
 }
 
 .about-section > h2 {
@@ -332,7 +408,6 @@ h2 {
 */
 
 .arrow {
-  margin-bottom: 3rem;
   border: 1px solid var(--black);
   border-radius: 50%;
   width: 50px;
@@ -342,6 +417,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 3s;
 }
 
 .arrow > img {
@@ -355,6 +431,16 @@ h2 {
 
 footer {
   padding: 3rem;
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 footer > p {
@@ -379,6 +465,14 @@ footer > p > a:first-of-type:hover {
 footer > p > a > img {
   width: 45px;
   height: auto;
+}
+
+/*
+  Display
+*/
+
+.hidden {
+  display: none;
 }
 
 /* body {

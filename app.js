@@ -1,6 +1,3 @@
-const recipeCard = document.getElementById("recipe-card");
-/* recipeCard.classList.add("invisible"); */
-
 /*-------------CHANGE FILTERS-------------*/
 
 const filters = document.getElementById("filters");
@@ -37,6 +34,7 @@ async function getRecipe() {
   res.json().then(function (res) {
     console.log(res);
     recipe = res.results;
+    hideAll();
     updateTitle(recipe[0].title);
     updateImage(recipe[0].image);
     updateInstructions(recipe[0].analyzedInstructions[0].steps);
@@ -44,13 +42,13 @@ async function getRecipe() {
     updateTime(recipe[0].readyInMinutes);
     updateTag();
     getIngredients(recipe[0].id);
+    displayRecipe();
   });
-  /* recipeCard.classList.remove("invisible"); */
 }
 
 async function getIngredients(id) {
   const res = await fetch(
-    `https://api.spoonacular.com/recipes/${id}/information?apiKey=918aa9352c7f4a8c890ce6775ff91479&includeNutrition=false`
+    `https://api.spoonacular.com/recipes/${id}/information?apiKey=acb1e2c1f901409fa0d4edc5395a11c0&includeNutrition=false`
   );
   res.json().then(function (res) {
     updateIngredients(res.extendedIngredients);
@@ -130,4 +128,104 @@ function updateIngredients(recipeData) {
   }
 
   ingredients.appendChild(newList);
+}
+
+/*-----------ANIMATIONS-----------*/
+
+const header = document.getElementById("header");
+
+function displayRecipe() {
+  setTimeout(function () {
+    header.classList.remove("hidden");
+  }, 1000);
+}
+
+const ingredientsAnimate = document.getElementById("ingredients");
+const instructionsAnimate = document.getElementById("instructions");
+const aboutAnimate = document.getElementById("about-animate");
+const imageAnimate = document.getElementById("image-animate");
+const arrowAnimate = document.getElementById("arrow");
+const footerAnimate = document.getElementById("footer");
+
+window.addEventListener("scroll", animate);
+
+function animate() {
+  const scrollPosition = window.scrollY;
+  const targetIngredients = ingredientsAnimate.offsetTop + 25;
+  if (scrollPosition > targetIngredients) {
+    ingredientsAnimate.classList.remove("hidden");
+    instructionsAnimate.classList.remove("hidden");
+  }
+  const targetAbout = aboutAnimate.offsetTop + 25;
+  if (scrollPosition > targetAbout) {
+    setTimeout(function () {
+      aboutAnimate.classList.remove("hidden");
+      imageAnimate.classList.remove("hidden");
+    }, 1800);
+  }
+  const targetArrow = arrowAnimate.offsetTop + 25;
+  if (scrollPosition > targetArrow) {
+    setTimeout(function () {
+      arrowAnimate.classList.remove("hidden");
+      footerAnimate.classList.remove("hidden");
+    }, 2800);
+  }
+}
+
+/* window.addEventListener("scroll", animateIngredients);
+
+function animateIngredients() {
+  const scrollPosition = window.scrollY;
+  const targetIngredients = ingredientsAnimate.offsetTop + 25;
+  if (scrollPosition > targetIngredients) {
+    ingredientsAnimate.classList.remove("hidden");
+    instructionsAnimate.classList.remove("hidden");
+  }
+} */
+
+/* window.addEventListener("scroll", animateAbout);
+
+function animateAbout() {
+  const scrollPosition = window.scrollY;
+  const targetAbout = aboutAnimate.offsetTop + 25;
+  if (scrollPosition > targetAbout) {
+    setTimeout(function () {
+      aboutAnimate.classList.remove("hidden");
+      imageAnimate.classList.remove("hidden");
+    }, 1800);
+  }
+} */
+
+/* window.addEventListener("scroll", animateArrow);
+
+function animateArrow() {
+  const scrollPosition = window.scrollY;
+  const targetArrow = arrowAnimate.offsetTop + 25;
+  if (scrollPosition > targetArrow) {
+    setTimeout(function () {
+      arrowAnimate.classList.remove("hidden");
+    }, 2800);
+  }
+} */
+
+/* window.addEventListener("scroll", animateFooter);
+
+function animateFooter() {
+  const scrollPosition = window.scrollY;
+  const targetFooter = footerAnimate.offsetTop + 25;
+  if (scrollPosition > targetFooter) {
+    setTimeout(function () {
+      footerAnimate.classList.remove("hidden");
+    }, 2800);
+  }
+} */
+
+function hideAll() {
+  header.classList.add("hidden");
+  ingredientsAnimate.classList.add("hidden");
+  instructionsAnimate.classList.add("hidden");
+  aboutAnimate.classList.add("hidden");
+  imageAnimate.classList.add("hidden");
+  arrowAnimate.classList.add("hidden");
+  footerAnimate.classList.add("hidden");
 }
