@@ -32,7 +32,6 @@ async function getRecipe() {
     `https://api.spoonacular.com/recipes/complexSearch?apiKey=1cc62e8cd6f84ab3ba211ed0bb158210&number=1&maxReadyTime=30&addRecipeInformation=true&sort=popular&addRecipeNutrition=true&diet=${filterString}&offset=${offset}`
   );
   res.json().then(function (res) {
-    console.log(res);
     recipe = res.results;
     hideAll();
     updateTitle(recipe[0].title);
@@ -133,13 +132,6 @@ function updateIngredients(recipeData) {
 /*-----------ANIMATIONS-----------*/
 
 const header = document.getElementById("header");
-
-function displayRecipe() {
-  setTimeout(function () {
-    header.classList.remove("hidden");
-  }, 1000);
-}
-
 const ingredientsAnimate = document.getElementById("ingredients");
 const instructionsAnimate = document.getElementById("instructions");
 const aboutAnimate = document.getElementById("about-animate");
@@ -147,12 +139,46 @@ const imageAnimate = document.getElementById("image-animate");
 const arrowAnimate = document.getElementById("arrow");
 const footerAnimate = document.getElementById("footer");
 
+function displayRecipe() {
+  const header = document.getElementById("header");
+  setTimeout(function () {
+    header.classList.remove("hidden");
+  }, 1000);
+
+  const targetIngredients = ingredientsAnimate.offsetTop;
+  if (document.documentElement.clientHeight > targetIngredients) {
+    setTimeout(function () {
+      ingredientsAnimate.classList.remove("hidden");
+      instructionsAnimate.classList.remove("hidden");
+    }, 1200);
+  }
+
+  const targetAbout = aboutAnimate.offsetTop;
+  if (document.documentElement.clientHeight > targetAbout) {
+    setTimeout(function () {
+      aboutAnimate.classList.remove("hidden");
+      imageAnimate.classList.remove("hidden");
+    }, 1800);
+  }
+
+  const targetArrow = arrowAnimate.offsetTop + 25;
+  if (document.documentElement.clientHeight > targetArrow) {
+    setTimeout(function () {
+      arrowAnimate.classList.remove("hidden");
+      footerAnimate.classList.remove("hidden");
+    }, 2000);
+  }
+}
+
 window.addEventListener("scroll", animate);
 
 function animate() {
   const scrollPosition = window.scrollY;
   const targetIngredients = ingredientsAnimate.offsetTop + 25;
-  if (scrollPosition > targetIngredients) {
+  if (
+    scrollPosition > targetIngredients ||
+    document.documentElement.clientHeight > targetIngredients
+  ) {
     ingredientsAnimate.classList.remove("hidden");
     instructionsAnimate.classList.remove("hidden");
   }

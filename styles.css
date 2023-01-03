@@ -367,6 +367,7 @@ h2 {
 
 #about {
   display: flex;
+  max-width: 1400px;
   padding: 1rem 10vw;
   padding-bottom: 4rem;
   align-items: center;
